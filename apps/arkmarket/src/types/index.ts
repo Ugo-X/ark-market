@@ -1,6 +1,26 @@
+export interface CollectionStats {
+  address: string;
+  floor: string;
+  floor_percentage: string;
+  image: string;
+  is_verified: boolean;
+  listed_items: number;
+  listed_percentage: number;
+  marketcap: string;
+  name: string;
+  owner_count: number;
+  sales: number;
+  token_count: number;
+  total_sales: number;
+  total_volume: number;
+  volume: number;
+  top_offer: string;
+}
+
 export interface Collection {
   address: string;
   floor?: string;
+  floor_percentage?: string;
   image?: string;
   is_verified: boolean;
   listed_items: number;
@@ -296,3 +316,17 @@ export interface TokenActivity {
 export interface Filters {
   traits: Record<string, string[]>;
 }
+
+export type CollectionTimerange = "10m" | "1h" | "6h" | "1d" | "7d" | "30d";
+
+export type CollectionSortBy =
+  | "floor_price"
+  | "total_volume"
+  | "floor_percentage"
+  | "volume"
+  | "top_bid"
+  | "number_of_sales"
+  | "marketcap"
+  | "listed";
+
+export type CollectionSortDirection = "asc" | "desc";
